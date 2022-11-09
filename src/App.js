@@ -1,8 +1,16 @@
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Container } from 'react-bootstrap';
+import HeaderComp from './components/HeaderComponent';
+import SearchComp from './components/SearchComponent';
 
 function App() {
+
   return (
-    <h1>react app</h1>
+    <Container fluid>
+      <HeaderComp/>
+      <SearchComp/>
+    </Container>
   );
 }
 

@@ -1,38 +1,99 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+/* MAIN CONTAINER */
+.container-fluid {
+  background-color: #FFDF9E;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-family: Helvetica;
+}
+
+/* HEADER COMPONENT */
+.header-row {
+  background-color: #003366;
+  min-height: 10vh;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.header-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.header-text {
+  font-size: calc(20px + 5vmin);
+}
+
+/* SEARCH COMPONENT */
+.search-col {
+  margin-top: 10px !important;
+  margin-bottom: 10px;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+}
+
+.search-heading {
+  font-size: calc(10px + 2vmin);
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  .search-input, .form-control, .search-button {
+    width: 75vw !important;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (max-width: 1200px) and (min-width: 800px) {
+  .search-input, .form-control, .search-button {
+    width: 50vw !important;
   }
+}
+
+@media screen and (max-width: 1600px) and (min-width: 1200px) {
+  .search-input, .form-control, .search-button {
+    width: 30vw !important;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  .search-input, .form-control, .search-button {
+    width: 20vw !important;
+  }
+}
+
+.search-input, .search-input::placeholder {
+  text-align: center;
+}
+
+.option-col {
+  text-align: center;
+}
+
+.option-heading {
+  font-size: calc(10px + 1vmin);
+}
+
+.search-button-container {
+  display: flex;
+  justify-content: center;
+  margin: 0px 0px 10px 0px;
+}
+
+/* RECIPE CARDS */
+.recipe-row {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+}
+
+.recipe-card {
+  text-align: center;
+  margin: 15px 5px 15px 5px;
+}
+
+.recipe-ingredient-list-element {
+  list-style: none;
 }
