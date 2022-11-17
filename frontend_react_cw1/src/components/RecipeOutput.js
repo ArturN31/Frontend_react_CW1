@@ -3,6 +3,7 @@ import { Row, Col, Button, Card, ListGroup  } from 'react-bootstrap';
 import NutritionFetch from "./NutritionFetch";
 import StarRating from "./Stars";
 
+//Recipe card output
 const Recipe = ({ item }) => {
     const [rating, setRating] = useState(0);
 

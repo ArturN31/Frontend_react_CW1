@@ -2,17 +2,26 @@ import React, { useState } from "react";
 import { Row, Col } from 'react-bootstrap';
 import RecipeOutput from './RecipeOutput';
 
+//Main component that:
+//displays input fields for filtering recipes via title and ingredient
+//filters recipes
+//amount of cards select option
+//displays cards
+
+//SHOULD BE DESTRUCTURED INTO SMALLER COMPONENTS
 const Search = ({data}) => {
     const [searchField, setSearchField] = useState("");
     const [filterString, setFilterString] = useState("");
     const [cardAmount, setCardAmount] = useState(5);
 
+    //Filtering recipes by title
     const recipeFilter = data.filter((entry) => {
         let recipe = entry.title.toLowerCase().includes(searchField.toLowerCase());
         if (recipe){return recipe;}
         return null;
     });
 
+    //Recipes filtered previously by title are now filtered by ingredient
     const ingredientFilter = recipeFilter.filter((entry) => {
         let ingredients = entry.ingredients.toLowerCase().includes(filterString.toLowerCase());
         if (ingredients){return ingredients;}
@@ -59,7 +68,7 @@ const Search = ({data}) => {
                 </Col>
             </Row>
 
-            {/* Recipe cards output */}
+            {/* Recipe cards output - displayed amount constrained by slicing the array 0-cardAmount */}
             <Row className='recipe-row'>
                 {ingredientFilter.slice(0,cardAmount).map((item, index) => {
                     return (

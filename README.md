@@ -23,7 +23,9 @@ To launch react:
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3000/recipes](http://localhost:3000/recipes) to view recipes in json format.
 
 ## Additional functionality
 
+- Included backend server that is used to fetch recipe data (Potentially insert star rating to calculate average).
 - Amount of displayed recipes.

@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import Nutrition from "./Nutrition";
 
+//Fetches nutrition from api
 const FetchData = ({ query }) => {
     const [nutrition, setNutrition] = useState({
         sugar_g: 0,

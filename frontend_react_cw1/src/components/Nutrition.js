@@ -1,5 +1,6 @@
 import React from "react";
 
+//Displays nutrition
 const Nutrition = ({ item }) => {
     return (
         <div>

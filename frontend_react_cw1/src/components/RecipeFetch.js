@@ -1,6 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import Search from "./Search";
 
+//fetches recipes from backend API
 const RecipeFetch = () => {
     const [recipes, setRecipes]=useState([]);
 

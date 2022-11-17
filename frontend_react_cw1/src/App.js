@@ -5,7 +5,6 @@ import HeaderComp from './components/HeaderComponent';
 import RecipeFetch from './components/RecipeFetch';
 
 function App() {
-
   return (
     <Container fluid>
       <HeaderComp/>
