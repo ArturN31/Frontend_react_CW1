@@ -1,19 +1,13 @@
-import React, { useState } from 'react';
-import { Row, Col, Button } from 'react-bootstrap';
-import RecipeMap from "./RecipeMap";
-import { recipes } from '../data/recipes';
+import React, { useState } from "react";
+import { Row, Col } from 'react-bootstrap';
+import RecipeOutput from './RecipeOutput';
 
-const Search = () => {
-    const [searchString, setSearchString] = useState("");
+const Search = ({data}) => {
     const [searchField, setSearchField] = useState("");
     const [filterString, setFilterString] = useState("");
     const [cardAmount, setCardAmount] = useState(5);
 
-    function handleClick() {
-        setSearchField(searchString)
-    }
-
-    const recipeFilter = recipes.filter((entry) => {
+    const recipeFilter = data.filter((entry) => {
         let recipe = entry.title.toLowerCase().includes(searchField.toLowerCase());
         if (recipe){return recipe;}
         return null;
@@ -27,6 +21,7 @@ const Search = () => {
     
     return (
         <>
+            {/* Input boxes for recipe and ingredients */}
             <Row>
                 <Col xs={12} className='search-col'>
                     <h2 className='search-heading'>Search for a recipe:</h2>
@@ -35,11 +30,10 @@ const Search = () => {
                             type='text' 
                             placeholder='Search recipe' 
                             className='search-input form-control'
-                            onChange={(e) => setSearchString(e.target.value)}
+                            onChange={(e) => setSearchField(e.target.value)}
                         />
                     </div>
                 </Col>
-
                 <Col xs={12} className='search-col'>
                     <h2 className='search-heading'>Filter ingredients:</h2>
                     <div xs={12} className='input-container'>
@@ -52,6 +46,8 @@ const Search = () => {
                     </div>
                 </Col>
             </Row>
+
+            {/* Amount of displayed cards */}
             <Row>
                 <Col className='option-col'>
                     <h3 className='option-heading'>Amount of displayed recipes:</h3>
@@ -62,11 +58,14 @@ const Search = () => {
                     </select>
                 </Col>
             </Row>
-            <Row className='search-button-container'>
-                <Button className='search-button' onClick={handleClick}>Search</Button>
-            </Row>
+
+            {/* Recipe cards output */}
             <Row className='recipe-row'>
-                <RecipeMap recipeList={ingredientFilter.slice(0,cardAmount)}/>
+                {ingredientFilter.slice(0,cardAmount).map((item, index) => {
+                    return (
+                        <RecipeOutput item={item} key={index}/>
+                    )
+                })}
             </Row>
         </>
     )
