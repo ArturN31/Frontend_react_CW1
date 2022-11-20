@@ -6,19 +6,14 @@ const FetchData = ({ query }) => {
     const [nutrition, setNutrition] = useState({
         sugar_g: 0,
         fiber_g: 0,
-        serving_size_g: 0,
-        sodium_mg: 0,
-        name: 0,
-        potassium_mg: 0,
-        fat_saturated_g: 0,
         fat_total_g: 0,
         calories: 0,
-        cholesterol_mg: 0,
         protein_g: 0,
         carbohydrates_total_g: 0,
     });
 
     const fetchData = useCallback(() => {
+        // console.log(query); 
         const url = "https://calorieninjas.p.rapidapi.com/v1/nutrition?query=" + query;
         const options = {
             method: "GET",
@@ -31,8 +26,27 @@ const FetchData = ({ query }) => {
         fetch(url, options)
         .then((response) => response.json())
         .then((incomingData) => {
-            if (incomingData.items.length !== 0)
-            setNutrition(incomingData.items[0]);
+            //looping through items and adding nutrient values
+            for(let i = 0; i <= incomingData.items.length - 1; i++){
+                var sugar_g = incomingData.items.map(ingredient => ingredient.sugar_g).reduce((a, b) => Math.round(a+b));
+                var fiber_g = incomingData.items.map(ingredient => ingredient.fiber_g).reduce((a, b) => Math.round(a+b));
+                var fat_total_g = incomingData.items.map(ingredient => ingredient.fat_total_g).reduce((a, b) => Math.round(a+b));
+                var calories = incomingData.items.map(ingredient => ingredient.calories).reduce((a, b) => Math.round(a+b));
+                var protein_g = incomingData.items.map(ingredient => ingredient.protein_g).reduce((a, b) => Math.round(a+b));
+                var carbohydrates_total_g = incomingData.items.map(ingredient => ingredient.carbohydrates_total_g).reduce((a, b) => Math.round(a+b));
+
+                var nutrients = [
+                    {
+                        sugar_g,
+                        fiber_g,
+                        fat_total_g,
+                        calories,
+                        protein_g,
+                        carbohydrates_total_g
+                    }
+                ];
+            }
+            setNutrition(nutrients[0]);
         })
         .catch((err) => console.error(err));
     }, [query]);

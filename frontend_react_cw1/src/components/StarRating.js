@@ -27,7 +27,7 @@ export default function StarRating(props,{ totalStars = 5 }) {
                 />
                 ))
             }
-            <p> {selectedStars} of {handleSelect} stars </p>
+            <p> {selectedStars} of {totalStars} stars </p>
         </div>
     );
 }

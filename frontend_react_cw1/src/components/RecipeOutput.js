@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Row, Col, Button, Card, ListGroup  } from 'react-bootstrap';
 import NutritionFetch from "./NutritionFetch";
-import StarRating from "./Stars";
+import StarRating from "./StarRating";
 
 //Recipe card output
 const Recipe = ({ item }) => {
@@ -18,7 +18,7 @@ const Recipe = ({ item }) => {
         <Col xs={12} sm={12} md={6} lg={4} xl={4}>
             <Card className='recipe-card'>
                 <Card.Body>
-                    Recipe rating: {rating}
+                    <p>Recipe rating: {rating}</p>
                     <Card.Title>{item.title}</Card.Title>
                     <ListGroup>
                         <ListGroup.Item>{ingredients}</ListGroup.Item>
@@ -27,7 +27,7 @@ const Recipe = ({ item }) => {
                         <ListGroup.Item>
                             Nutrition per serving:
                             <br></br>
-                            <NutritionFetch query={item.title}/>
+                            <NutritionFetch query={item.ingredients}/>
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <Row className='search-button-container'>
@@ -37,7 +37,9 @@ const Recipe = ({ item }) => {
                                 <Button className='search-button'>Add to menu</Button>
                             </Row>
                         </ListGroup.Item>
-                        <ListGroup.Item><StarRating item={item} updateRating={setRating}/></ListGroup.Item>
+                        <ListGroup.Item>
+                            <StarRating item={item} updateRating={setRating}/>
+                        </ListGroup.Item>
                     </ListGroup>
                 </Card.Body>
             </Card>
