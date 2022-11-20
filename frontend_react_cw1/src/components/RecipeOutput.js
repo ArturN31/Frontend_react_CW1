@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { Row, Col, Button, Card, ListGroup  } from 'react-bootstrap';
 import NutritionFetch from "./NutritionFetch";
 import StarRating from "./StarRating";
 
 //Recipe card output
 const Recipe = ({ item }) => {
-    const [rating, setRating] = useState(0);
-
     let ingredientsArray = item.ingredients.split(',');
-    const ingredients = ingredientsArray.map((element, i) => <li key={i} className='recipe-ingredient-list-element'>{element}</li>)
+
+    let ratingArray = item.rating.split(',');
+    let ratingTotal = ratingArray.map(rtg => rtg)
+                    .reduce((a, b) => parseInt(a) + parseInt(b));
+    let ratingAverage = ratingTotal / ratingArray.length;
 
     const handleClickShoppingList = () => {
 
@@ -18,14 +20,14 @@ const Recipe = ({ item }) => {
         <Col xs={12} sm={12} md={6} lg={4} xl={4}>
             <Card className='recipe-card'>
                 <Card.Body>
-                    <p>Recipe rating: {rating}</p>
+                    <p>Ratings: {ratingArray.length}, Recipe rating: {ratingAverage.toFixed(2)}</p>
                     <Card.Title>{item.title}</Card.Title>
                     <ListGroup>
-                        <ListGroup.Item>{ingredients}</ListGroup.Item>
+                        <ListGroup.Item>{ingredientsArray.map((element, i) => <li key={i} className='recipe-ingredient-list-element'>{element}</li>)}</ListGroup.Item>
                         <ListGroup.Item>Servings:<br></br>{item.servings}</ListGroup.Item>
                         <ListGroup.Item>{item.instructions}</ListGroup.Item>
                         <ListGroup.Item>
-                            Nutrition per serving:
+                            Nutrition for entire dish:
                             <br></br>
                             <NutritionFetch query={item.ingredients}/>
                         </ListGroup.Item>
@@ -38,7 +40,7 @@ const Recipe = ({ item }) => {
                             </Row>
                         </ListGroup.Item>
                         <ListGroup.Item>
-                            <StarRating item={item} updateRating={setRating}/>
+                            <StarRating item={item}/>
                         </ListGroup.Item>
                     </ListGroup>
                 </Card.Body>

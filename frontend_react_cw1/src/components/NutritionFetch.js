@@ -27,25 +27,24 @@ const FetchData = ({ query }) => {
         .then((response) => response.json())
         .then((incomingData) => {
             //looping through items and adding nutrient values
-            for(let i = 0; i <= incomingData.items.length - 1; i++){
-                var sugar_g = incomingData.items.map(ingredient => ingredient.sugar_g).reduce((a, b) => Math.round(a+b));
-                var fiber_g = incomingData.items.map(ingredient => ingredient.fiber_g).reduce((a, b) => Math.round(a+b));
-                var fat_total_g = incomingData.items.map(ingredient => ingredient.fat_total_g).reduce((a, b) => Math.round(a+b));
-                var calories = incomingData.items.map(ingredient => ingredient.calories).reduce((a, b) => Math.round(a+b));
-                var protein_g = incomingData.items.map(ingredient => ingredient.protein_g).reduce((a, b) => Math.round(a+b));
-                var carbohydrates_total_g = incomingData.items.map(ingredient => ingredient.carbohydrates_total_g).reduce((a, b) => Math.round(a+b));
+            var sugar_g = incomingData.items.map(ingredient => ingredient.sugar_g).reduce((a, b) => Math.round(a+b));
+            var fiber_g = incomingData.items.map(ingredient => ingredient.fiber_g).reduce((a, b) => Math.round(a+b));
+            var fat_total_g = incomingData.items.map(ingredient => ingredient.fat_total_g).reduce((a, b) => Math.round(a+b));
+            var calories = incomingData.items.map(ingredient => ingredient.calories).reduce((a, b) => Math.round(a+b));
+            var protein_g = incomingData.items.map(ingredient => ingredient.protein_g).reduce((a, b) => Math.round(a+b));
+            var carbohydrates_total_g = incomingData.items.map(ingredient => ingredient.carbohydrates_total_g).reduce((a, b) => Math.round(a+b));
 
-                var nutrients = [
-                    {
-                        sugar_g,
-                        fiber_g,
-                        fat_total_g,
-                        calories,
-                        protein_g,
-                        carbohydrates_total_g
-                    }
-                ];
-            }
+            var nutrients = [
+                {
+                    sugar_g,
+                    fiber_g,
+                    fat_total_g,
+                    calories,
+                    protein_g,
+                    carbohydrates_total_g
+                }
+            ];
+
             setNutrition(nutrients[0]);
         })
         .catch((err) => console.error(err));

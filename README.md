@@ -25,7 +25,10 @@ To launch react:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## Additional functionality
+## Functionality
 
-- Included backend server that is used to fetch recipe data (Potentially insert star rating to calculate average).
-- Amount of displayed recipes.
+- Included backend server that is used to fetch recipe data, insert rating.
+- Amount of displayed recipes (to limit the output).
+- Recipe filtering by title and ingredients.
+- Fully implemented calculation of recipe nutrients.
+- Ratings average (requires refresh of page)
