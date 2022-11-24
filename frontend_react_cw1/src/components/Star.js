@@ -1,10 +1,11 @@
 import React from "react";
-import { FaStar } from "react-icons/fa";
+import { GoStar } from "react-icons/go";
 
 //Single star output
 export default function Star({ selected = false, onSelect = f => f }) {
-    return <FaStar 
-	            color={selected ? "red" : "grey"} 
+    return <GoStar 
+	            id="star"
+                color={selected ? "red" : "grey"} 
 	            onClick={onSelect} 
             />;
 }

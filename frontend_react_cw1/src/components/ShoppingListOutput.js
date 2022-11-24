@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import { Row, Col, Button, Card, ListGroup  } from 'react-bootstrap';
-import NutritionFetch from "./NutritionFetch";
-import StarRating from "./StarRating";
 
 //Recipe card output
-const RecipeOutput = ({ item }) => {
+const ShoppingLstOutput = ({ item }) => {
     const [ shopList, setShopList ] = useState([]);
     const [ menuList, setMenuList ] = useState([]);
 
@@ -19,14 +17,6 @@ const RecipeOutput = ({ item }) => {
     }    
     
     let ingredientsArray = item.ingredients.split(','); //splits string of ingredients into array
-
-    let instructionsArray = item.instructions.split('.'); //splits string of instructions into array
-    instructionsArray.pop(); //removes last item from array - in this case it is ""
-
-    let ratingArray = item.rating.split(','); //splits string of ratings into array
-    let ratingTotal = ratingArray.map(rtg => rtg) 
-                    .reduce((a, b) => parseInt(a) + parseInt(b)); //calculates the total for each recipe
-    let ratingAverage = ratingTotal / ratingArray.length; //calculates average
 
     const handleAddToShoppingList = () => {
         if(!localStorage.getItem('shoppingList')) { //shoppingList does not exist in local storage
@@ -98,39 +88,11 @@ const RecipeOutput = ({ item }) => {
                     <ListGroup className="list-group-flush">
                         <ListGroup.Item>
                             <Row>
-                                <Col>
-                                    <span style={{fontStyle: 'italic'}}>
-                                        <span className="recipe-component-titles">Recipe rating: </span> {ratingAverage.toFixed(2)}
-                                        <br></br>
-                                        The recipe has been rated {ratingArray.length} times.
-                                    </span>
-                                </Col>
-                            </Row>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <Row>
                                 <Col xs={12} xl={6}>
                                     <span className="recipe-component-titles">Ingredients:</span><br></br>
                                     {ingredientsArray.map((element, i) => <li key={i} className='recipe-ingredient-list-element'>{element}</li>)}<br></br>
                                 </Col>
-                                <Col xs={12} xl={6}>
-                                    <span className="recipe-component-titles">Nutrition - entire dish:</span>
-                                    <br></br>
-                                    <NutritionFetch query={item.ingredients}/>
-                                </Col>
                             </Row>
-                            <Row>
-                                <Col xs={12}>
-                                    <span className="recipe-component-titles">Servings:</span><br></br>
-                                    {item.servings}
-                                </Col>
-                            </Row>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <span className="recipe-component-titles">Instructions:</span><br></br>
-                                {instructionsArray.map((element, i) => 
-                                    <li key={i} className='recipe-instructions-list-element'>{i+1}. {element}.</li>
-                                )}
                         </ListGroup.Item>
                         <ListGroup.Item>
                             <Row className="recipe-button-row">
@@ -150,9 +112,6 @@ const RecipeOutput = ({ item }) => {
                                 }
                             </Row>
                         </ListGroup.Item>
-                        <ListGroup.Item>
-                            <StarRating item={item}/>
-                        </ListGroup.Item>
                     </ListGroup>
                 </Card.Body>
             </Card>
@@ -160,4 +119,4 @@ const RecipeOutput = ({ item }) => {
     );
 };
 
-export default RecipeOutput;
+export default ShoppingLstOutput;

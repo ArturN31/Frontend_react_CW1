@@ -26,25 +26,29 @@ const FetchData = ({ query }) => {
         fetch(url, options)
         .then((response) => response.json())
         .then((incomingData) => {
-            //looping through items and adding nutrient values
-            var sugar_g = incomingData.items.map(ingredient => ingredient.sugar_g).reduce((a, b) => Math.round(a+b));
-            var fiber_g = incomingData.items.map(ingredient => ingredient.fiber_g).reduce((a, b) => Math.round(a+b));
-            var fat_total_g = incomingData.items.map(ingredient => ingredient.fat_total_g).reduce((a, b) => Math.round(a+b));
-            var calories = incomingData.items.map(ingredient => ingredient.calories).reduce((a, b) => Math.round(a+b));
-            var protein_g = incomingData.items.map(ingredient => ingredient.protein_g).reduce((a, b) => Math.round(a+b));
-            var carbohydrates_total_g = incomingData.items.map(ingredient => ingredient.carbohydrates_total_g).reduce((a, b) => Math.round(a+b));
+            //looping through items and adding nutrient values to establish totals
+            var calories = incomingData.items.map(ingredient => ingredient.calories).reduce((a, b) => a+b).toFixed(2);
+            var protein_g = incomingData.items.map(ingredient => ingredient.protein_g).reduce((a, b) => a+b).toFixed(2);
+            var carbohydrates_total_g = incomingData.items.map(ingredient => ingredient.carbohydrates_total_g).reduce((a, b) => a+b).toFixed(2);
+            var sugar_g = incomingData.items.map(ingredient => ingredient.sugar_g).reduce((a, b) => a+b).toFixed(2);
+            var fiber_g = incomingData.items.map(ingredient => ingredient.fiber_g).reduce((a, b) => a+b).toFixed(2);
+            var fat_total_g = incomingData.items.map(ingredient => ingredient.fat_total_g).reduce((a, b) => a+b).toFixed(2);
+            var fat_saturated_g = incomingData.items.map(ingredient => ingredient.fat_saturated_g).reduce((a, b) => a+b).toFixed(2);
 
+            //array of above vars
             var nutrients = [
                 {
+                    calories,
+                    protein_g,
+                    carbohydrates_total_g,
                     sugar_g,
                     fiber_g,
                     fat_total_g,
-                    calories,
-                    protein_g,
-                    carbohydrates_total_g
+                    fat_saturated_g
                 }
             ];
 
+            //sets nutrition that is passed to the nutrition component
             setNutrition(nutrients[0]);
         })
         .catch((err) => console.error(err));

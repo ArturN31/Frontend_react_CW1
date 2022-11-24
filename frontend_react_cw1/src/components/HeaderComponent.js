@@ -4,9 +4,10 @@ import { Row, Col } from 'react-bootstrap';
 //Simple header of the page
 const Header = () => {
     return (
-        <Row className='header-row'>
-            <Col className='header-col'>
-                <h1 className='header-text'>HEADER</h1>
+        <Row id='header-row'>
+            <Col id='header-col'>
+                <h1 id='header-text'>delicious</h1>
+                <p id='header-subtext'>RECIPES</p>
             </Col>
         </Row>
     )

@@ -5,6 +5,7 @@ import Star from "./Star";
 export default function StarRating(props,{ totalStars = 5 }) {
     const [selectedStars, setSelectedStars] = useState();
 
+    //post request to api - inserts document on the backend - updates rating
     const postData = () => {
         if (selectedStars !== undefined) {
             const url = "http://localhost:3001/rating";
@@ -28,8 +29,10 @@ export default function StarRating(props,{ totalStars = 5 }) {
 
     const createArray = length => [...Array(length)];
 
+    //sets selected amount of stars and refreshes page to update rating
     const handleSelect = ({i}) => {
         setSelectedStars((selectedStars) => selectedStars = i + 1);
+        window.location.reload(false);
     }
 
     useEffect(() => {
@@ -40,7 +43,7 @@ export default function StarRating(props,{ totalStars = 5 }) {
 
     return (
         <div>
-            Rate the recipe:<br></br>
+            <span className="recipe-titles">Rate the recipe:</span><br></br>
             {createArray(totalStars).map((n, i) => (
                 <Star
                     key={i}
@@ -49,7 +52,6 @@ export default function StarRating(props,{ totalStars = 5 }) {
                 />
                 ))
             }
-            
             <p> {selectedStars ? selectedStars : "0"} of {totalStars} stars </p>
         </div>
     );
