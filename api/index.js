@@ -6,20 +6,20 @@ const app = express();
 const cors = require('cors');
 app.use(cors());
 
-app.use(express.urlencoded({ extended: false }));
-app.use(express.json());
+app.use(express.urlencoded({ extended: false })); //body parser 
+app.use(express.json()); //parses incoming json to the req.body
 
 //DB setup
 var Datastore = require('nedb')
-  , db = new Datastore({ filename: './db/recipes.db', autoload: true });
+  , RecipesDB = new Datastore({ filename: './db/recipes.db', autoload: true });
 
-db.ensureIndex({ fieldName: 'title', unique: true }, function (err) {});
+RecipesDB.ensureIndex({ fieldName: 'title', unique: true }, function (err) {});
 
 //Seeding DB
 var recipeSeed = require('./db/recipesSeed');
-db.find({}, function (err, docs) {
+RecipesDB.find({}, function (err, docs) {
     if (docs) {
-        db.insert(recipeSeed, function(err) {}); 
+        RecipesDB.insert(recipeSeed, function(err) {}); 
     }
 }); 
 
@@ -27,8 +27,9 @@ app.get('/', function(req, res) {
     res.send('Hello! Welcome to my application.');
 });
 
+//used to fetch recipes to the frontend
 app.get('/recipes', cors(), function (req, res, next) {
-    db.find({}, function (err, docs) {
+    RecipesDB.find({}, function (err, docs) {
         if (docs) {res.json(docs)}
         if (err) {res.send(err)}
     });
@@ -38,8 +39,9 @@ app.get('/rating', function(req, res) {
     res.send('Ratings.');
 });
 
+//used to post ratings from the frontend
 app.post("/rating", function (req, res) {
-    db.update({ title: req.body.title }, 
+    RecipesDB.update({ title: req.body.title }, 
         { $set: { title: req.body.title, 
         ingredients: req.body.ingredients, 
         servings: req.body.servings, 

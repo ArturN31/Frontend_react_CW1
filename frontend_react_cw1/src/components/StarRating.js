@@ -39,8 +39,6 @@ export default function StarRating(props,{ totalStars = 5 }) {
         postData();
     })
 
-    // console.log("Clicked star: " + selectedStars);
-
     return (
         <div>
             <span className="recipe-titles">Rate the recipe:</span><br></br>

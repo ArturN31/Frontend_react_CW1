@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Row, Col, Button, Card, ListGroup  } from 'react-bootstrap';
-import NutritionFetch from "./NutritionFetch";
+import { Row, Col, Button, Card, ListGroup, Accordion  } from 'react-bootstrap';
+import NutritionFetchEntireDish from "./NutritionFetchEntireDish";
+import NutritionFetchServing from "./NutritionFetchServing";
 import StarRating from "./StarRating";
 
 //Recipe card output
@@ -18,15 +19,38 @@ const RecipeOutput = ({ item }) => {
         setMenuList(JSON.parse(localStorage.getItem('menu')));
     }    
     
-    let ingredientsArray = item.ingredients.split(','); //splits string of ingredients into array
+    // let ingredientsArray = item.ingredients.split(','); //splits string of ingredients into array
+    let ingredientsArray = [];
+    if(item !== undefined) {
+        for(let i = 0; i <= item.ingredients.length - 1; i++){
+            ingredientsArray.push(item.ingredients[i]);
+        }
+    }
 
-    let instructionsArray = item.instructions.split('.'); //splits string of instructions into array
-    instructionsArray.pop(); //removes last item from array - in this case it is ""
+    // let instructionsArray = item.instructions.split('.'); //splits string of instructions into array
+    // instructionsArray.pop(); //removes last item from array - in this case it is ""
+    let instructionsArray = [];
+    if(item !== undefined) {
+        for(let i = 0; i <= item.instructions.length - 1; i++){
+            instructionsArray.push(item.instructions[i]);
+        }
+    }
 
-    let ratingArray = item.rating.split(','); //splits string of ratings into array
-    let ratingTotal = ratingArray.map(rtg => rtg) 
+    let ratingArray = [];
+    let ratingTotal = 0;
+    let ratingAverage = 0;
+
+    if(item !== undefined) {
+        ratingArray = item.rating.split(','); //splits string of ratings into array
+        ratingTotal = ratingArray.map(rtg => rtg) 
                     .reduce((a, b) => parseInt(a) + parseInt(b)); //calculates the total for each recipe
-    let ratingAverage = ratingTotal / ratingArray.length; //calculates average
+        ratingAverage = ratingTotal / ratingArray.length; //calculates average
+    }
+    
+    // let ratingArray = item[0].rating.split(','); //splits string of ratings into array
+    // let ratingTotal = ratingArray.map(rtg => rtg) 
+    //                 .reduce((a, b) => parseInt(a) + parseInt(b)); //calculates the total for each recipe
+    // let ratingAverage = ratingTotal / ratingArray.length; //calculates average
 
     const handleAddToShoppingList = () => {
         if(!localStorage.getItem('shoppingList')) { //shoppingList does not exist in local storage
@@ -92,70 +116,80 @@ const RecipeOutput = ({ item }) => {
 
     return (
         <Col xs={12} sm={12} md={6} lg={6} xl={4}>
-            <Card className='recipe-card'>
-                <Card.Body>
-                    <Card.Title id='recipe-card-title'>{item.title}</Card.Title>
-                    <ListGroup className="list-group-flush">
-                        <ListGroup.Item>
-                            <Row>
-                                <Col>
-                                    <span style={{fontStyle: 'italic'}}>
-                                        <span className="recipe-component-titles">Recipe rating: </span> {ratingAverage.toFixed(2)}
-                                        <br></br>
-                                        The recipe has been rated {ratingArray.length} times.
-                                    </span>
-                                </Col>
-                            </Row>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <Row>
-                                <Col xs={12} xl={6}>
-                                    <span className="recipe-component-titles">Ingredients:</span><br></br>
-                                    {ingredientsArray.map((element, i) => <li key={i} className='recipe-ingredient-list-element'>{element}</li>)}<br></br>
-                                </Col>
-                                <Col xs={12} xl={6}>
-                                    <span className="recipe-component-titles">Nutrition - entire dish:</span>
-                                    <br></br>
-                                    <NutritionFetch query={item.ingredients}/>
-                                </Col>
-                            </Row>
-                            <Row>
-                                <Col xs={12}>
-                                    <span className="recipe-component-titles">Servings:</span><br></br>
-                                    {item.servings}
-                                </Col>
-                            </Row>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <span className="recipe-component-titles">Instructions:</span><br></br>
-                                {instructionsArray.map((element, i) => 
-                                    <li key={i} className='recipe-instructions-list-element'>{i+1}. {element}.</li>
-                                )}
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <Row className="recipe-button-row">
-                                {/* CONDITIONAL RENDERING - Changes button and its functionality if recipe added to shopping list*/}
-                                { 
-                                    shopList.some(e => e.title === item.title) 
-                                    ?<Button onClick={handleRemoveFromShoppingList}>Remove from shopping list</Button>
-                                    :<Button onClick={handleAddToShoppingList}>Add to shopping list</Button>
-                                }
-                            </Row>
-                            <Row className="recipe-button-row">
-                                {/* CONDITIONAL RENDERING - Changes button and its functionality if recipe added to menu*/}
-                                { 
-                                    menuList.some(e => e.title === item.title) 
-                                    ?<Button onClick={handleRemoveFromMenu}>Remove from menu</Button>
-                                    :<Button onClick={handleAddToMenu}>Add to menu</Button>
-                                }
-                            </Row>
-                        </ListGroup.Item>
-                        <ListGroup.Item>
-                            <StarRating item={item}/>
-                        </ListGroup.Item>
-                    </ListGroup>
-                </Card.Body>
-            </Card>
+            <Accordion flush>
+                <Accordion.Item eventKey={item.title}>
+                    <Accordion.Header>{item.title}</Accordion.Header>
+                    <Accordion.Body>
+                        <Card className='recipe-card'>
+                            <Card.Body>
+                                
+                                <ListGroup className="list-group-flush">
+                                    <ListGroup.Item>
+                                        <Row>
+                                            <Col>
+                                                <span style={{fontStyle: 'italic'}}>
+                                                    <span className="recipe-component-titles">Recipe rating: </span> {ratingAverage.toFixed(2)}
+                                                    <br></br>
+                                                    The recipe has been rated {ratingArray.length} times.
+                                                </span>
+                                            </Col>
+                                        </Row>
+                                    </ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <Row>
+                                            <Col xs={12}>
+                                                <span className="recipe-component-titles">Servings:</span><br></br>
+                                                <p>{item.servings}</p>
+                                            </Col>
+                                            <Col xs={12} xxl={4}>
+                                                <span className="recipe-component-titles">Ingredients:</span><br></br>
+                                                {ingredientsArray.map((element, i) => <li key={i} className='recipe-ingredient-list-element'>{element.quantity} {element.name}</li>)}<br></br>
+                                            </Col>
+                                            <Col xs={6} xxl={4}>
+                                                <span className="recipe-component-titles">Nutrition - entire dish:</span>
+                                                <br></br>
+                                                <NutritionFetchEntireDish query={item.ingredients}/>
+                                            </Col>
+                                            <Col xs={6} xxl={4}>
+                                                <span className="recipe-component-titles">Nutrition per serving:</span>
+                                                <br></br>
+                                                <NutritionFetchServing query={item.ingredients} servings={item.servings}/>
+                                            </Col>
+                                        </Row>
+                                    </ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <span className="recipe-component-titles">Instructions:</span><br></br>
+                                            {instructionsArray.map((element, i) => 
+                                                <li key={i} className='recipe-instructions-list-element'>{i+1}. {element}</li>
+                                            )}
+                                    </ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <Row className="recipe-button-row">
+                                            {/* CONDITIONAL RENDERING - Changes button and its functionality if recipe added to shopping list*/}
+                                            { 
+                                                shopList.some(e => e.title === item.title) 
+                                                ?<Button onClick={handleRemoveFromShoppingList}>Remove from shopping list</Button>
+                                                :<Button onClick={handleAddToShoppingList}>Add to shopping list</Button>
+                                            }
+                                        </Row>
+                                        <Row className="recipe-button-row">
+                                            {/* CONDITIONAL RENDERING - Changes button and its functionality if recipe added to menu*/}
+                                            { 
+                                                menuList.some(e => e.title === item.title) 
+                                                ?<Button onClick={handleRemoveFromMenu}>Remove from menu</Button>
+                                                :<Button onClick={handleAddToMenu}>Add to menu</Button>
+                                            }
+                                        </Row>
+                                    </ListGroup.Item>
+                                    <ListGroup.Item>
+                                        <StarRating item={item}/>
+                                    </ListGroup.Item>
+                                </ListGroup>
+                            </Card.Body>
+                        </Card>
+                    </Accordion.Body>
+                </Accordion.Item>
+            </Accordion>
         </Col>
     );
 };
