@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Row } from 'react-bootstrap';
+
 import ShoppingListOutput from './ShoppingListOutput';
 
 const ShoppingList = () => {

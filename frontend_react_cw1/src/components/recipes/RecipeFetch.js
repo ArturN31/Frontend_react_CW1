@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import Search from "./Search";
+import Search from "./RecipeFilter";
 
 //fetches recipes from backend API
 const RecipeFetch = () => {

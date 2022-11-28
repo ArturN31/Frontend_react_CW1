@@ -28,7 +28,33 @@
             "The tips of the spears will get very brown but watch them to prevent burning.",
             "They are great plain, but sometimes I serve them with a light vinaigrette if we need something acidic to balance out our meal."
         ],
-        "rating": "5,4,4,4,3,4,5,5,5,2,2,3,4,3,4,3,2,5,5,2,5,3,2,5,3,5,3,4,4,4"
+        "reviews": [
+            {
+                "name": "Peter",
+                "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
+                "rating": 5
+            },
+            {
+                "name": "Jeff",
+                "review": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.",
+                "rating": 3
+            },
+            {
+                "name": "Mark",
+                "review": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the gre",
+                "rating": 4
+            },
+            {
+                "name": "Euan",
+                "review": "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pro",
+                "rating": 3
+            },
+            {
+                "name": "Stephen",
+                "review": "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar,.",
+                "rating": 2
+            }
+        ]
     },
     {
         "_id": 2,
@@ -67,7 +93,13 @@
             "The tips of the spears will get very brown but watch them to prevent burning.",
             "They are great plain, but sometimes I serve them with a light vinaigrette if we need something acidic to balance out our meal."
         ],
-        "rating": "4,4,1,4,4,3,5,4,1,2,5,5,2,2,3,1,2,1,1,1,5,3,3,3,4,3,3,1,4,5"
+        "reviews": [
+            {
+                "name": "Peter",
+                "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
+                "rating": 5
+            }
+        ]
     },
     {
         "_id": 3,
@@ -115,7 +147,14 @@
             "Add any optional toppings as you wish.",
             "Bake at 400 deg Fahrenheit for 15 minutes."
         ],
-        "rating": "2,4,3,3,1,5,1,4,1,2,4,3,3,4,3,5,2,2,3,4,2,5,2,4,3,3,5,2,5,5"
+        "reviews": [
+            {
+                "name": "Peter",
+                "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
+                "rating": 5
+            }
+        ]
+        
     },
     {
         "_id": 4,
@@ -150,7 +189,13 @@
             "Ladle the batter mix into the tin.",
             "Bake for 30 minutes until well browned and risen."
         ],
-        "rating": "4,1,5,5,3,5,2,2,2,5,3,4,1,4,3,5,1,1,2,2,4,4,3,4,5,1,3,2,4,4"
+        "reviews": [
+            {
+                "name": "Peter",
+                "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
+                "rating": 5
+            }
+        ]
     },
     {
         "_id": 5,
@@ -210,7 +255,13 @@
             "Bake 8 to 10 minutes or until light brown.",
             "About 6 1/2 dozen cookies."
         ],
-        "rating": "3,4,3,3,4,2,3,1,5,5,5,4,5,2,4,5,2,5,4,3,1,1,1,5,2,4,4,2,3,5"
+        "reviews": [
+            {
+                "name": "Peter",
+                "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
+                "rating": 5
+            }
+        ]
     },
     {
         "_id": 6,
@@ -268,7 +319,13 @@
             "Let cool on rack before cutting into squares.",
             "(Make-ahead: Cover and refrigerate for up to 2 days or overwrap with heavy-duty foil and freeze for up to 2 weeks.)"
         ],
-        "rating": "1,1,1,2,4,4,4,2,1,4,5,1,3,5,2,2,1,4,4,2,4,5,5,2,4,4,1,2,5,1"
+        "reviews": [
+            {
+                "name": "Peter",
+                "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
+                "rating": 5
+            }
+        ]
     },
     {
         "_id": 7,
@@ -334,7 +391,13 @@
             "Using 2 forks, shred chicken, then stir into mayo mixture with mango, cranberries, green onions and celery.",
             "Divide among muffins with lettuce leaves, Sandwich with tops."
         ],
-        "rating": "1,3,4,4,1,1,4,4,2,1,3,3,2,1,2,3,2,2,2,1,5,5,4,2,1,2,1,1,2,1"
+        "reviews": [
+            {
+                "name": "Peter",
+                "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
+                "rating": 5
+            }
+        ]
     },
     {
         "_id": 8,
@@ -374,7 +437,13 @@
             "Done!",
             "Add to your ice cream machine per manufacturer`s instructions or freeze and stir every 30 minutes or so."
         ],
-        "rating": "3,5,3,4,2,2,5,3,1,1,4,5,1,5,1,1,4,3,2,2,4,3,5,2,3,2,1,5,3,2"
+        "reviews": [
+            {
+                "name": "Peter",
+                "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
+                "rating": 5
+            }
+        ]
     },
     {
         "_id": 9,
@@ -424,7 +493,13 @@
             "Stir rapidly until it cooks, remove from heat.",
             "Top with a little more ground pepper and serve!"
         ],
-        "rating": "3,4,4,3,4,2,2,1,1,5,2,1,5,3,2,4,1,1,2,3,1,5,1,1,2,1,3,4,4,2"
+        "reviews": [
+            {
+                "name": "Peter",
+                "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
+                "rating": 5
+            }
+        ]
     },
     {
         "_id": 10,
@@ -486,7 +561,13 @@
             "Either shred the romaine hearts and toss with the sauce, or serve individual leaves for dipping.",
             "If liked, garnish with more whole anchovies and/or Parmesan flakes."
         ],
-        "rating": "1,3,1,2,2,1,2,3,4,1,3,2,4,1,3,5,2,2,1,2,3,3,5,2,1,4,1,4,3,3"
+        "reviews": [
+            {
+                "name": "Peter",
+                "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
+                "rating": 5
+            }
+        ]
     },
     {
         "_id": 11,
@@ -546,7 +627,13 @@
             "Optionally, you can also use the sauce from the ziplock bags, but keep in mind it will be more watery (we did anyway).",
             "Garnish with the sliced spring onion and serve"
         ],
-        "rating": "4,2,5,2,5,5,4,3,4,3,3,2,2,3,4,3,5,4,3,4,2,4,3,4,3,4,5,1,5,4"
+        "reviews": [
+            {
+                "name": "Peter",
+                "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
+                "rating": 5
+            }
+        ]
     },
     {
         "_id": 12,
@@ -605,6 +692,12 @@
             "5 minutes before stew is done, add the halved shallots.",
             "Garnish with cilantro and basil."
         ],
-        "rating": "5,1,3,5,4,1,4,2,4,4,5,5,5,5,3,4,5,1,2,3,5,1,5,2,5,5,3,1,4,4"
+        "reviews": [
+            {
+                "name": "Peter",
+                "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
+                "rating": 5
+            }
+        ]
     }
 ]

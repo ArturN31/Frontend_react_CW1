@@ -23,10 +23,6 @@ RecipesDB.find({}, function (err, docs) {
     }
 }); 
 
-app.get('/', function(req, res) {
-    res.send('Hello! Welcome to my application.');
-});
-
 //used to fetch recipes to the frontend
 app.get('/recipes', cors(), function (req, res, next) {
     RecipesDB.find({}, function (err, docs) {
@@ -35,19 +31,10 @@ app.get('/recipes', cors(), function (req, res, next) {
     });
 })
 
-app.get('/rating', function(req, res) {
-    res.send('Ratings.');
-});
-
-//used to post ratings from the frontend
-app.post("/rating", function (req, res) {
+//used to post reviews from the frontend
+app.post("/reviews", function (req, res) {
     RecipesDB.update({ title: req.body.title }, 
-        { $set: { title: req.body.title, 
-        ingredients: req.body.ingredients, 
-        servings: req.body.servings, 
-        instructions: req.body.instructions, 
-        rating: req.body.rating,
-        _id: req.body.id } }, { multi: true }, function (err, numReplaced) {});
+        { $set: { reviews:req.body.reviews } }, { multi: true }, function (err, numReplaced) {});
 })
 
 app.use(function (req, res) {

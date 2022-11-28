@@ -1,6 +1,9 @@
 html {
   min-width: 370px;
   height: 100%;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 
 #root {
@@ -133,7 +136,7 @@ a:hover {
 }
 
 @media screen and (max-width: 600px) {
-  .search-input, .form-control, .search-button {
+  .search-input, .search-button {
     width: 90vw !important;
   }
 
@@ -143,7 +146,7 @@ a:hover {
 }
 
 @media screen and (max-width: 1200px)and (min-width: 600px) {
-  .search-input, .form-control, .search-button {
+  .search-input, .search-button {
     width: 70vw !important;
   }
 
@@ -153,7 +156,7 @@ a:hover {
 }
 
 @media screen and (max-width: 1600px) and (min-width: 1200px) {
-  .search-input, .form-control, .search-button {
+  .search-input, .search-button {
     width: 45vw !important;
   }
 
@@ -163,7 +166,7 @@ a:hover {
 }
 
 @media screen and (min-width: 1600px) {
-  .search-input, .form-control, .search-button {
+  .search-input, .search-button {
     width: 40vw !important;
   }
 
@@ -213,6 +216,15 @@ button.accordion-button:hover {
 
 button.accordion-button:not(.collapsed) {
   color: black !important;
+  margin: 5px 0px 0px 0px !important;
+}
+
+button.accordion-button.collapsed {
+  margin: 5px 0px 0px 0px !important;
+}
+
+.accordion-item:last-of-type .accordion-collapse {
+  border-radius: 0px !important;
 }
 
 .accordion-body {
@@ -221,6 +233,10 @@ button.accordion-button:not(.collapsed) {
 
 .accordion {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+.accordion-collapse {
+  border: 1px solid black !important;
 }
 
 
@@ -296,7 +312,6 @@ button:hover {
 
 
 /* ALERT */
-
 .empty-storage-alert {
   color: white;
   display: flex;

@@ -3,7 +3,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
 
-import HeaderComp from './components/HeaderComponent';
+import HeaderRouter from './components/navigation/HeaderRouter';
 
 
 
@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Container fluid>
-        <HeaderComp/>
+        <HeaderRouter/>
       </Container>
     </>
   );

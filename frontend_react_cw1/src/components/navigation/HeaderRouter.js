@@ -1,15 +1,14 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import RecipesPage from '../RecipesPage';
-import ShoppingListPage from '../ShoppingListPage';
-import MenuPage from '../MenuPage';
 
+import RecipesPage from '../../pages/RecipesPage';
+import ShoppingListPage from '../../pages/ShoppingListPage';
+import MenuPage from '../../pages/MenuPage';
 import Navigation from './Navigation';
 
 //Simple header of the page
-const Header = () => {
+const HeaderRouter = () => {
     return (
         <>
             <Row id='header-row'>
@@ -31,4 +30,4 @@ const Header = () => {
     )
 };
 
-export default Header;
+export default HeaderRouter;
