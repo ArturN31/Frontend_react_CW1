@@ -7,7 +7,7 @@
 Ensure to install dependencies:
 `npm i`
 
-To launch the server:
+To launch the server navigate to the api directory and run a command:
 `node index` or `nodemon index`
 
 Runs the server in the development mode.\
@@ -19,7 +19,7 @@ Open [http://localhost:3001/recipes](http://localhost:3001/recipes) to view reci
 Ensure to install dependencies:
 `npm i`
 
-To launch react:
+To launch react navigate to the frontend_react_cw1 directory and run a command:
 `npm start`
 
 Runs the app in the development mode.\
