@@ -44,7 +44,7 @@ app.post("/reviews", function (req, res) {
 
 //serves the index.html on any unknown routes
 app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+    res.sendFile(path.join(__dirname, '../frontend_react_cw1/build', 'index.html'));
 });
 
 app.use(function (req, res) {
@@ -52,6 +52,7 @@ app.use(function (req, res) {
     res.send('Oops! Page not found.');
 });
 
-app.listen(3001, () => {
+//port listening
+app.listen(process.env.PORT || 3001, () => {
     console.log('Server started on port 3001. Ctrl^c to quit.');
 });
