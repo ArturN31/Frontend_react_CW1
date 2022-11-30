@@ -7,17 +7,17 @@
 ## How to run locally
 
 Navigate to the app directory:\
-`cd app`\
+`cd app`
 
 Install server dependencies:\
-`npm i`\
+`npm i`
 
 Run script:\
 `npm run heroku-postbuild`\
-Navigates to client directory, installs dependencies and bundles the react app.\
+Navigates to client directory, installs dependencies and bundles the react app.
 
 Run the app:\
-`npm start`\
+`npm start`
 
 Open [http://localhost:3001](http://localhost:3001) to view the react app in your browser.\
 Open [http://localhost:3001/recipes](http://localhost:3001/recipes) to view the recipes in json format.
