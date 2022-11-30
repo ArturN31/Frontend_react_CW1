@@ -43,9 +43,7 @@ app.post("/reviews", function (req, res) {
 })
 
 //serves the index.html on any unknown routes
-app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend_react_cw1/build', 'index.html'));
-});
+app.use(express.static(path.join(__dirname + "public")));
 
 app.use(function (req, res) {
     res.status(404);
