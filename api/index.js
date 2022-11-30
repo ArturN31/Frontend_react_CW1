@@ -6,8 +6,13 @@ const app = express();
 const cors = require('cors');
 app.use(cors());
 
+//Path
+const path = require('path');
+
 app.use(express.urlencoded({ extended: false })); //body parser 
 app.use(express.json()); //parses incoming json to the req.body
+
+app.use(express.static(path.join(__dirname, 'build'))); //serves static files from build directory
 
 //DB setup
 var Datastore = require('nedb')
@@ -36,6 +41,11 @@ app.post("/reviews", function (req, res) {
     RecipesDB.update({ title: req.body.title }, 
         { $set: { reviews:req.body.reviews } }, { multi: true }, function (err, numReplaced) {});
 })
+
+//serves the index.html on any unknown routes
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
 
 app.use(function (req, res) {
     res.status(404);
