@@ -44,6 +44,10 @@ app.post("/reviews", function (req, res) {
 
 app.use(express.static(path.resolve(__dirname, "./frontend_react_cw1/build")));
 
+app.get('*', (req, res) => {
+    res.redirect('/');
+});
+
 app.use(function (req, res) {
     res.status(404);
     res.send('Oops! Page not found.');
