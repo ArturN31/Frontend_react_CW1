@@ -23,7 +23,7 @@ export default function ReviewInsert(props) {
             };
             reviewsArray.push(review); //adding enteredReview to all reviews
 
-            const url = "http://localhost:3001/reviews";
+            const url = "/reviews";
             const options = {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
