@@ -53,6 +53,51 @@
                 "name": "Stephen",
                 "review": "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar,.",
                 "rating": 2
+            },
+            {
+                "name": "Hannah",
+                "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
+                "rating": 5
+            },
+            {
+                "name": "Lauren",
+                "review": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.",
+                "rating": 4
+            },
+            {
+                "name": "Andrea",
+                "review": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the gre",
+                "rating": 4
+            },
+            {
+                "name": "Claire",
+                "review": "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pro",
+                "rating": 2
+            },
+            {
+                "name": "Cameron",
+                "review": "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar,.",
+                "rating": 1
+            },
+            {
+                "name": "Dylan",
+                "review": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.",
+                "rating": 5
+            },
+            {
+                "name": "Justin",
+                "review": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the gre",
+                "rating": 5
+            },
+            {
+                "name": "Abigail",
+                "review": "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pro",
+                "rating": 4
+            },
+            {
+                "name": "Bernadette",
+                "review": "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar,.",
+                "rating": 3
             }
         ]
     },
@@ -98,6 +143,46 @@
                 "name": "Peter",
                 "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
                 "rating": 5
+            },
+            {
+                "name": "Wilson",
+                "review": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.",
+                "rating": 3
+            },
+            {
+                "name": "Justin",
+                "review": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the gre",
+                "rating": 5
+            },
+            {
+                "name": "John",
+                "review": "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pro",
+                "rating": 1
+            },
+            {
+                "name": "Caroline",
+                "review": "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar,.",
+                "rating": 2
+            },
+            {
+                "name": "Amanda",
+                "review": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta.",
+                "rating": 5
+            },
+            {
+                "name": "Joanne",
+                "review": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the gre",
+                "rating": 5
+            },
+            {
+                "name": "Kimberly",
+                "review": "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pro",
+                "rating": 4
+            },
+            {
+                "name": "Gavin",
+                "review": "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar,.",
+                "rating": 3
             }
         ]
     },
@@ -149,9 +234,24 @@
         ],
         "reviews": [
             {
-                "name": "Peter",
+                "name": "Heather",
                 "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
-                "rating": 5
+                "rating": 3
+            },
+            {
+                "name": "Jennifer",
+                "review": "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the gre",
+                "rating": 1
+            },
+            {
+                "name": "Megan",
+                "review": "Li Europan lingues es membres del sam familie. Lor separat existentie es un myth. Por scientie, musica, sport etc, litot Europa usa li sam vocabular. Li lingues differe solmen in li grammatica, li pro",
+                "rating": 2
+            },
+            {
+                "name": "Fraser",
+                "review": "The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar,.",
+                "rating": 2
             }
         ]
         
@@ -191,7 +291,12 @@
         ],
         "reviews": [
             {
-                "name": "Peter",
+                "name": "Rebecca",
+                "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
+                "rating": 5
+            },
+            {
+                "name": "Molly",
                 "review": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec qu",
                 "rating": 5
             }

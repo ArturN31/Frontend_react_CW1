@@ -310,6 +310,16 @@ button:hover {
   justify-content: center;
 }
 
+.form-floating>label {
+  text-align: center !important;
+  transform-origin: center !important;
+  padding: 0.5rem !important;
+}
+
+.review-input {
+  text-align: center !important;
+}
+
 
 /* ALERT */
 .empty-storage-alert {

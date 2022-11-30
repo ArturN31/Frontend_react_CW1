@@ -56,35 +56,41 @@ export default function ReviewInsert(props) {
     return (
         <Col>
             <Form>
-                <Form.Group>
-                    <FloatingLabel
-                        label="Enter your name"
-                        className="mb-3"
-                    >
-                        <Form.Control
-                            ref={nameRef}
-                            type="text"
-                            placeholder="Enter your name" 
-                            maxLength="20"
-                            required
-                        />
-                    </FloatingLabel>
-                </Form.Group>
-                <Form.Group>
-                    <FloatingLabel
-                        label="Leave a review here"
-                        className="mb-3"
-                    >
-                        <Form.Control
-                            ref={reviewRef}
-                            as="textarea" 
-                            placeholder="Leave a review here" 
-                            maxLength="150" 
-                            onKeyDown={handleKeyDown}
-                            required
-                        />
-                    </FloatingLabel>
-                </Form.Group>
+                <Col xs={12} xl={6} className='mx-auto'>
+                    <Form.Group>
+                        <FloatingLabel
+                            label="Enter your name"
+                            className="mb-3"
+                        >
+                            <Form.Control
+                                ref={nameRef}
+                                type="text"
+                                placeholder="Enter your name" 
+                                maxLength="20"
+                                required
+                                className="review-input"
+                            />
+                        </FloatingLabel>
+                    </Form.Group>
+                </Col>
+                <Col  xs={12} xl={6} className='mx-auto'>
+                    <Form.Group>
+                        <FloatingLabel
+                            label="Leave a review here"
+                            className="mb-3"
+                        >
+                            <Form.Control
+                                ref={reviewRef}
+                                as="textarea" 
+                                placeholder="Leave a review here" 
+                                maxLength="150" 
+                                onKeyDown={handleKeyDown}
+                                required
+                                className="review-input"
+                            />
+                        </FloatingLabel>
+                    </Form.Group>
+                </Col>
                 <Form.Group>
                     <RatingInsert starRating={setEnteredRating}/>
                 </Form.Group>
