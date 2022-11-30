@@ -6,7 +6,7 @@ const RecipeFetch = () => {
     const [recipes, setRecipes]=useState([]);
 
     const fetchData = useCallback(() => {
-        const url = "https://localhost:3001/recipes";
+        const url = "/recipes";
         fetch(url)
         .then((response) => response.json())
         .then((incomingData) => {
