@@ -1,29 +1,26 @@
-# CW1 - Front-End Web Development
+# CW1 - Front-End Web Development (Cookery SPA)
 
-## Available Scripts
+## Deployed on heroku
 
-### Backend - api
+[Click here to view](https://cw1.herokuapp.com/)
 
-Ensure to install dependencies:
-`npm i`
+## How to run locally
 
-To launch the server navigate to the api directory and run a command:
-`node index` or `nodemon index`
+Navigate to the app directory:\
+`cd app`\
 
-Runs the server in the development mode.\
-Open [http://localhost:3001](http://localhost:3001) to view it in your browser.\
-Open [http://localhost:3001/recipes](http://localhost:3001/recipes) to view recipes in json format.
+Install server dependencies:\
+`npm i`\
 
-### Frontend - react
+Run script:\
+`npm run heroku-postbuild`\
+Navigates to client directory, installs dependencies and bundles the react app.\
 
-Ensure to install dependencies:
-`npm i`
+Run the app:\
+`npm start`\
 
-To launch react navigate to the frontend_react_cw1 directory and run a command:
-`npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Open [http://localhost:3001](http://localhost:3001) to view the react app in your browser.\
+Open [http://localhost:3001/recipes](http://localhost:3001/recipes) to view the recipes in json format.
 
 ## Functionality/Implemented features
 
