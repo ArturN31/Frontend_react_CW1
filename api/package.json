@@ -6,6 +6,7 @@
     "nodemon": "^2.0.20"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "heroku-postbuild": "cd frontend_react_cw1 && npm install && npm run build"
   }
 }

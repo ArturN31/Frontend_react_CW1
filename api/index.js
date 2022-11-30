@@ -42,8 +42,7 @@ app.post("/reviews", function (req, res) {
         { $set: { reviews:req.body.reviews } }, { multi: true }, function (err, numReplaced) {});
 })
 
-//serves the index.html on any unknown routes
-app.use(express.static(path.join(__dirname + "public")));
+app.use(express.static(path.resolve(__dirname, "./frontend_react_cw1/build")));
 
 app.use(function (req, res) {
     res.status(404);
